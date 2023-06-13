@@ -1,0 +1,232 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #555;
+	color: #fff;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.App {
+	margin-top: -5vh;
+	max-height: 100vh;
+	width: fit-content;
+	border-radius: 10px;
+	outline: 3px double lime;
+	border: 5px solid orange;
+	/* position: relative; */
+	/* padding: 8px; */
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+main {
+	/* max-height: 50vh; */
+	margin-top: 1rem;
+}
+
+header > h1 {
+	text-shadow: 1px 1px 4px lime;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.offset {
+	position: absolute;
+	left: -999999px;
+}
+
+#searchNote {
+	height: 2rem;
+	width: 50vh;
+	margin: 2px auto 0;
+	border-radius: 10px;
+	font-size: 1.4rem;
+	outline: 2px double lime;
+	font-family: cursive;
+	padding: 8px;
+}
+
+.noteContainer {
+	margin-bottom: 1rem;
+	max-height: 300px;
+	min-height: 100px;
+
+	overflow-y: scroll;
+	border: 3px double navy;
+	padding: 2;
+
+	animation-name: bord;
+	animation-duration: 4s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+}
+
+.noteContainer::-webkit-scrollbar {
+	width: 10px;
+}
+
+.noteContainer::-webkit-scrollbar-track {
+	background-color: navy;
+}
+
+.noteContainer::-webkit-scrollbar-thumb {
+	background-color: orangered;
+	border-radius: 8px;
+}
+
+.noteContainer::-webkit-scrollbar-thumb:hover {
+	background-color: #555;
+}
+
+.bgchange:nth-child(odd) {
+	background-color: skyblue;
+}
+.bgchange:nth-child(even) {
+	background-color: royalblue;
+}
+
+.newContent {
+	width: 15rem;
+	height: 5rem;
+	font-size: 1.2rem;
+	display: block;
+	border-radius: 8px;
+	padding: 0.5em;
+	font-family: monospace;
+	outline: none;
+	margin-bottom: 5px;
+	border-width: 4px;
+}
+
+.newContent:hover,
+.newContent:focus,
+.newTitle:hover,
+.newTitle:focus {
+	animation-name: bord;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	outline: none;
+}
+
+.newTitle {
+	font-size: 1.3em;
+	margin-bottom: 10px;
+	width: 15rem;
+	display: block;
+	border-radius: 8px;
+	font-family: Roboto;
+	outline: none;
+	padding: 0.5em;
+	font-family: "Fira Code", "courier new";
+	border-width: 4px;
+}
+
+.addBtn {
+	font: 1rem caveat;
+	padding: 3px;
+	font-weight: 900;
+	width: 7.5rem;
+	border-radius: 8px;
+}
+
+.add {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.item {
+	border: 3px solid lime;
+	padding: 10px 6px;
+	width: 100%;
+}
+
+.item h2 {
+	word-spacing: 0.5ch;
+	letter-spacing: 1px;
+	color: Black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.item details,
+.item p.content {
+	font-size: 1.1rem;
+	color: #000;
+}
+
+@keyframes bord {
+	0% {
+		border-top-color: pink;
+		border-right-color: blue;
+		border-left-color: pink;
+		border-bottom-color: blue;
+	}
+	25% {
+		border-top-color: blue;
+		border-right-color: pink;
+		border-left-color: blue;
+		border-bottom-color: pink;
+	}
+	50% {
+		border-top-color: pink;
+		border-right-color: blue;
+		border-left-color: pink;
+		border-bottom-color: blue;
+	}
+	75% {
+		border-top-color: blue;
+		border-right-color: pink;
+		border-left-color: blue;
+		border-bottom-color: pink;
+	}
+	100% {
+		border-top-color: pink;
+		border-right-color: blue;
+		border-left-color: pink;
+		border-bottom-color: blue;
+	}
+}
+
+.deleteBtn {
+	opacity: 0.6;
+	border-radius: 4px;
+	padding: 3px;
+}
+
+.deleteBtn:hover,
+.deleteBtn:focus {
+	opacity: 1;
+	background-color: red;
+	color: #fff;
+}
+
+footer p {
+	display: fixed;
+	font-weight: 900;
+	font-size: smaller;
+	text-align: center;
+	bottom: 0;
+}
+
+footer {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
